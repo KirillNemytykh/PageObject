@@ -33,6 +33,7 @@ public class MoneyTransferTest {
         var amount = generateValidBalance(firstCardBalance);
         var transferPage = dashboardPage.selectCardToTransfer(secondCardInfo);
         dashboardPage = transferPage.makeValidTransfer(String.valueOf(amount), firstCardInfo);
+
         var expectedBalanceFirstCard = firstCardBalance - amount;
         var expectedBalanceSecondCard = secondCardBalance + amount;
         var actualBalanceFirstCard = dashboardPage.getCardBalance(firstCardInfo);
